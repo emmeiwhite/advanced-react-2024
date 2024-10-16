@@ -1,5 +1,8 @@
-const UseStateArray = () => {
-  return <h2>useState array example</h2>;
-};
+import { data } from '../../../data'
 
-export default UseStateArray;
+const UseStateArray = () => {
+  console.log(data)
+  return <h2>useState array example</h2>
+}
+
+export default UseStateArray
