@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const ErrorExample = () => {
+const ErrorExample1 = () => {
   let count = 0 // Normal value
   const stateArray = useState(0) // State value
   console.log('state count ', stateArray[0])
@@ -36,4 +36,22 @@ const ErrorExample = () => {
   )
 }
 
+function ErrorExample() {
+  console.log('This is a dummy example!')
+  let x = 23
+
+  const [count, setCount] = useState(0)
+
+  return (
+    <div className="counter">
+      <h2>{count}</h2>
+      <button
+        onClick={() => setCount(c => c + 1)}
+        className="btn"
+      >
+        increase
+      </button>
+    </div>
+  )
+}
 export default ErrorExample
