@@ -1,4 +1,4 @@
-import Starter from './../src/tutorial/01-useState/starter/03-useState-array'
+import Starter from './../src/tutorial/01-useState/starter/04-useState-object'
 function App() {
   return (
     <div className="container">
