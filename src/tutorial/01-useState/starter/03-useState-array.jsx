@@ -1,20 +1,41 @@
+import { useState } from 'react'
 import { data } from '../../../data'
 
 const UseStateArray = () => {
-  console.log(data)
-  const peopleJSX = data.map(person => (
+  const [list, setList] = useState(data)
+  function handleDelete(id) {
+    console.log(id)
+    setList(list.filter(item => item.id !== id))
+  }
+
+  function handleClear() {
+    setList([])
+  }
+
+  const peopleJSX = list.map(person => (
     <Person
-      name={person.name}
+      {...person}
       key={person.id}
+      handleDelete={handleDelete}
     />
   ))
-  return <div>{peopleJSX}</div>
-}
-
-function Person({ name }) {
   return (
     <div>
-      <h4>{name}</h4>
+      {peopleJSX}
+      <button
+        className="btn"
+        onClick={handleClear}
+      >
+        Clear All
+      </button>
+    </div>
+  )
+}
+
+function Person({ id, name, handleDelete }) {
+  return (
+    <div>
+      <h4 onClick={() => handleDelete(id)}>{name}</h4>
     </div>
   )
 }
