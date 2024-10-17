@@ -53,6 +53,11 @@ function RandomToggle() {
     }
 
     window.addEventListener('scroll', someFunc)
+
+    // Cleanup fxn to remove event handler as soon as the RandomToggle component is unmounted
+    return () => {
+      window.removeEventListener('scroll', someFunc)
+    }
   }, [])
 
   return <p>Event Handler Example in useEffect</p>
