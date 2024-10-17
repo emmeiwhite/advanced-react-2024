@@ -17,7 +17,7 @@ const UserChallenge = () => {
       >
         {user ? 'Logout' : 'Login '}
       </button>
-      <div>{user ? 'User is Logged in' : 'User is Logged out'}</div>
+      <div>{user ? `User is Logged in ${user.name}` : 'User is Logged out'}</div>
     </div>
   )
 }
