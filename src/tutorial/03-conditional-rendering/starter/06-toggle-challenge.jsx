@@ -1,5 +1,21 @@
-const ToggleChallenge = () => {
-  return <h2>toggle challenge</h2>;
-};
+import { useState } from 'react'
 
-export default ToggleChallenge;
+const ToggleChallenge = () => {
+  const [isOpen, setIsOpen] = useState(true)
+  return (
+    <div>
+      <button
+        className="btn"
+        onClick={() => {
+          setIsOpen(!isOpen)
+        }}
+      >
+        Toggle
+      </button>
+
+      {isOpen && <p>This modal is open</p>}
+    </div>
+  )
+}
+
+export default ToggleChallenge
