@@ -9,7 +9,8 @@ const CleanupFunction = () => {
 
   return (
     <section>
-      {isMounted && <ToggleComponent />}
+      {/* {isMounted && <ToggleComponent />} */}
+      {isMounted && <RandomToggle />}
       <button
         className="btn"
         onClick={handleToggle}
@@ -45,4 +46,15 @@ function ToggleComponent() {
   )
 }
 
+function RandomToggle() {
+  useEffect(() => {
+    function someFunc() {
+      // some logic
+    }
+
+    window.addEventListener('scroll', someFunc)
+  }, [])
+
+  return <p>Event Handler Example in useEffect</p>
+}
 export default CleanupFunction
