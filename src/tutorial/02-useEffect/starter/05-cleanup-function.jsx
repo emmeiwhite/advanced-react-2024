@@ -23,6 +23,11 @@ const CleanupFunction = () => {
 function ToggleComponent() {
   useEffect(() => {
     console.log('Invoked on the initial render')
+
+    // Assume we are subscribing to some third party service! that runs in the background
+    setInterval(() => {
+      console.log('hello there!')
+    }, 1000)
   }, [])
 
   return (
