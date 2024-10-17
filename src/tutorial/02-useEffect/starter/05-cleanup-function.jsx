@@ -33,6 +33,8 @@ function ToggleComponent() {
     return () => {
       clearInterval(service)
     }
+
+    // useEffect assumes that we only return a cleanup fxn, that's why we must not return a promise or set the useEffect callback as async-await (since async-await returns a promise)
   }, [])
   // Even when the component was un-mounted, the service was still being played in the background!
 
