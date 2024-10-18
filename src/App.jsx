@@ -1,9 +1,11 @@
-import Starter from './../src/tutorial/02-useEffect/starter/05-cleanup-function'
-import Navbar from './tutorial/04-project-structure/starter/Navbar'
+// import Starter from './../src/tutorial/02-useEffect/starter/05-cleanup-function'
+
+import { Home, About } from './tutorial/04-project-structure/starter/Pages'
 function App() {
   return (
     <div className="container">
-      <Navbar />
+      <Home />
+      <About />
     </div>
   )
 }
