@@ -1,11 +1,9 @@
-// import Starter from './../src/tutorial/02-useEffect/starter/05-cleanup-function'
+import ExampleThree from './tutorial/04-project-structure/starter/Example'
 
-import { Home, About } from './tutorial/04-project-structure/starter/Pages'
 function App() {
   return (
     <div className="container">
-      <Home />
-      <About />
+      <ExampleThree />
     </div>
   )
 }
