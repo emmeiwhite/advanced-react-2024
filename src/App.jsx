@@ -1,4 +1,4 @@
-import ExampleThree from './tutorial/04-project-structure/starter/Example'
+import ExampleThree from './tutorial/06-forms/starter/01-controlled-inputs'
 
 function App() {
   return (
