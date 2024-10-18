@@ -15,12 +15,14 @@ const UserChallenge = () => {
   const handleSubmit = e => {
     e.preventDefault()
 
+    if (!name) return
     const person = {
       id: uuidv4(),
       name
     }
 
     setPersons([...persons, person])
+    setName('')
   }
   return (
     <div>
