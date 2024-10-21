@@ -1,9 +1,7 @@
-import { useContext } from 'react'
-import { NavbarContext } from './Navbar'
+import useCustomContext from './useContextFetch'
 
 export default function UserContainer() {
-  const value = useContext(NavbarContext)
-  console.log(value)
+  const value = useCustomContext()
 
   const { user, login, logout } = value
   const { name } = user
