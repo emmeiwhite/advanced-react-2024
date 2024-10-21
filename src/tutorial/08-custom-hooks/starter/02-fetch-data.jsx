@@ -4,7 +4,7 @@ const url = 'https://api.github.com/users/QuincyLarson'
 const FetchData = () => {
   // order matters
   // don't place user JSX before loading or error
-  const { isLoading, isError, user } = useFetch(url)
+  const { isLoading, isError, data: user } = useFetch(url)
 
   if (isLoading) {
     return <h2>Loading...</h2>

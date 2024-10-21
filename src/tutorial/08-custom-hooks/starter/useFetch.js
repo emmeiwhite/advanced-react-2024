@@ -3,10 +3,10 @@ import { useState, useEffect } from 'react'
 function useFetch(url) {
   const [isLoading, setIsLoading] = useState(true)
   const [isError, setIsError] = useState(false)
-  const [user, setUser] = useState(null)
+  const [data, setData] = useState(null)
 
   useEffect(() => {
-    const fetchUser = async () => {
+    const fetchData = async () => {
       try {
         const resp = await fetch(url)
         // console.log(resp);
@@ -16,8 +16,8 @@ function useFetch(url) {
           return
         }
 
-        const user = await resp.json()
-        setUser(user)
+        const data = await resp.json()
+        setData(data)
       } catch (error) {
         setIsError(true)
         // console.log(error);
@@ -25,10 +25,10 @@ function useFetch(url) {
       // hide loading
       setIsLoading(false)
     }
-    fetchUser()
+    fetchData()
   }, [])
 
-  return { isLoading, isError, user }
+  return { isLoading, isError, data }
 }
 
 export default useFetch
