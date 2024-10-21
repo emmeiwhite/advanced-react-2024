@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export default function useToggle(defaultValue) {
+function useToggle(defaultValue) {
   // Let's toggle a Message component first with how we do it without custom hook
   const [isAlive, setIsAlive] = useState(defaultValue)
 
@@ -9,5 +9,7 @@ export default function useToggle(defaultValue) {
   }
 
   // let's return an object in this case
-  return { isAlive, setIsAlive }
+  return { isAlive, toggle }
 }
+
+export default useToggle
