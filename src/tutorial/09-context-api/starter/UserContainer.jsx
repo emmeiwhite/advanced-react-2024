@@ -1,8 +1,8 @@
 export default function UserContainer({ user, logout, login }) {
   const { name } = user
   return (
-    <div>
-      <h3>{name ? name : 'Login to Enter the application'}</h3>
+    <div className="user-container">
+      <p>{name ? `Hello: ${name}` : 'Login to Enter the application'}</p>
       <button
         className="btn"
         onClick={name ? logout : login}

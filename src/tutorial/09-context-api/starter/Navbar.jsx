@@ -12,12 +12,13 @@ export default function Navbar() {
     setUser({ name: 'Sahil Mushtaq' })
   }
   return (
-    <div>
+    <nav className="navbar">
+      <h5>CONTEXT API</h5>
       <NavLink
         user={user}
         logout={logout}
         login={login}
       />
-    </div>
+    </nav>
   )
 }
