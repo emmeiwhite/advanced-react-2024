@@ -1,5 +1,4 @@
-export default function UserContainer({ user, logout, login }) {
-  const { name } = user
+export default function UserContainer() {
   return (
     <div className="user-container">
       <p>{name ? `Hello: ${name}` : 'Login to Enter the application'}</p>

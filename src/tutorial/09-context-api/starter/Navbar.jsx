@@ -1,5 +1,7 @@
-import { useState } from 'react'
+import { createContext, useState } from 'react'
 import NavLink from './NavLink'
+
+export const NavbarContext = createContext()
 
 export default function Navbar() {
   const [user, setUser] = useState({ name: 'Sahil Mushtaq' })
@@ -11,14 +13,11 @@ export default function Navbar() {
   const login = () => {
     setUser({ name: 'Sahil Mushtaq' })
   }
+
   return (
     <nav className="navbar">
       <h5>CONTEXT API</h5>
-      <NavLink
-        user={user}
-        logout={logout}
-        login={login}
-      />
+      <NavLink />
     </nav>
   )
 }

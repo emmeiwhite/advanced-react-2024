@@ -1,6 +1,6 @@
 import UserContainer from './UserContainer'
 
-export default function NavLink({ user, logout, login }) {
+export default function NavLink() {
   return (
     <div className="nav-container">
       <ul className="nav-links">
@@ -11,11 +11,7 @@ export default function NavLink({ user, logout, login }) {
           <a href="#">about</a>
         </li>
       </ul>
-      <UserContainer
-        user={user}
-        logout={logout}
-        login={login}
-      />
+      <UserContainer />
     </div>
   )
 }
