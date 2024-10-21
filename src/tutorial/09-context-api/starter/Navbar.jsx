@@ -7,6 +7,7 @@ export default function Navbar() {
   const [user, setUser] = useState({ name: 'Sahil Mushtaq' })
 
   const logout = () => {
+    console.log('logout invoked!')
     setUser({ ...user, name: null })
   }
 

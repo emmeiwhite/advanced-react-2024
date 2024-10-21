@@ -5,9 +5,9 @@ export default function UserContainer() {
   const value = useContext(NavbarContext)
   console.log(value)
 
-  const { name, login, logout } = value
+  const { user, login, logout } = value
+  const { name } = user
 
-  return
   return (
     <div className="user-container">
       <p>{name ? `Hello: ${name}` : 'Login to Enter the application'}</p>
