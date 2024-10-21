@@ -15,9 +15,11 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="navbar">
-      <h5>CONTEXT API</h5>
-      <NavLink />
-    </nav>
+    <NavbarContext.Provider value={{ user, logout, login }}>
+      <nav className="navbar">
+        <h5>CONTEXT API</h5>
+        <NavLink />
+      </nav>
+    </NavbarContext.Provider>
   )
 }
