@@ -1,12 +1,4 @@
-import { useState } from 'react'
-
 const ToggleExample = () => {
-  // Let's toggle a Message component first with how we do it without custom hook
-  const [isAlive, setIsAlive] = useState(true)
-
-  function toggle() {
-    setIsAlive(!isAlive)
-  }
   return (
     <div>
       <h4>toggle custom hook</h4>
