@@ -8,9 +8,12 @@ const defaultState = {
   isError: ''
 }
 // Whatever we return from reducer is going to be our new application state
+// I really love this code! The coding style is awesome. In Redux-Toolkit actions creators will be abstracted out for us, but here I am enjoying it!
 const reducer = (state, action) => {
   if (action.type === 'REMOVE_ITEM') {
     // update state accordingly
+    let newPeople = state.people.filter(person => person.id !== action.payload)
+    return { ...state, people: newPeople }
   }
 
   if (action.type === 'CLEAR_LIST') {
@@ -32,7 +35,7 @@ const ReducerBasics = () => {
   const removeItem = id => {
     // let newPeople = people.filter(person => person.id !== id)
     // setPeople(newPeople)
-    dispatch({ type: 'REMOVE_ITEM' })
+    dispatch({ type: 'REMOVE_ITEM', payload: id })
   }
 
   const clearList = () => {
