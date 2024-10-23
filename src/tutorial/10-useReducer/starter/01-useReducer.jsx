@@ -1,6 +1,10 @@
 import React, { useReducer } from 'react'
 import { data } from '../../../data'
 
+/**  --- ACTIONS ---  */
+const REMOVE_ITEM = 'REMOVE_ITEM'
+const CLEAR_LIST = 'CLEAR_LIST'
+const RESET_LIST = 'RESET_LIST'
 // This is our Application state
 const defaultState = {
   people: data,
@@ -10,21 +14,23 @@ const defaultState = {
 // Whatever we return from reducer is going to be our new application state
 // I really love this code! The coding style is awesome. In Redux-Toolkit actions creators will be abstracted out for us, but here I am enjoying it!
 const reducer = (state, action) => {
-  if (action.type === 'REMOVE_ITEM') {
+  if (action.type === REMOVE_ITEM) {
     // update state accordingly
     let newPeople = state.people.filter(person => person.id !== action.payload)
     return { ...state, people: newPeople }
   }
 
-  if (action.type === 'CLEAR_LIST') {
+  if (action.type === CLEAR_LIST) {
     // update state accordingly
     console.log('Action is here with type', action.type)
     return { ...state, people: [] }
   }
 
-  if (action.type === 'RESET_LIST') {
+  if (action.type === RESET_LIST) {
     return { ...state, people: data }
   }
+
+  return state // When there is no ACTION type match we return old state & same UI
 }
 
 const ReducerBasics = () => {
