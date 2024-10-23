@@ -16,7 +16,7 @@ const defaultState = {
 const reducer = (state, action) => {
   if (action.type === REMOVE_ITEM) {
     // update state accordingly
-    let newPeople = state.people.filter(person => person.id !== action.payload)
+    let newPeople = state.people.filter(person => person.id !== action.payload.id)
     return { ...state, people: newPeople }
   }
 
@@ -42,7 +42,7 @@ const ReducerBasics = () => {
   const removeItem = id => {
     // let newPeople = people.filter(person => person.id !== id)
     // setPeople(newPeople)
-    dispatch({ type: 'REMOVE_ITEM', payload: id })
+    dispatch({ type: 'REMOVE_ITEM', payload: { id } })
   }
 
   const clearList = () => {
