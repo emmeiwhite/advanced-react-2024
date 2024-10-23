@@ -4,7 +4,8 @@ import { data } from '../../../data'
 // This is our Application state
 const defaultState = {
   people: data,
-  isLoading: false
+  isLoading: false,
+  isError: ''
 }
 // Whatever we return from reducer is going to be our new application state
 const reducer = (state, action) => {
@@ -15,7 +16,11 @@ const reducer = (state, action) => {
   if (action.type === 'CLEAR_LIST') {
     // update state accordingly
     console.log('Action is here with type', action.type)
-    return state
+    return { ...state, people: [] }
+  }
+
+  if (action.type === 'RESET_LIST') {
+    return { ...state, people: data }
   }
 }
 
@@ -38,6 +43,7 @@ const ReducerBasics = () => {
 
   const resetList = () => {
     // setPeople(data)
+    dispatch({ type: 'RESET_LIST' })
   }
   return (
     <div>
