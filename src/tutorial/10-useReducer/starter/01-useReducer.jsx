@@ -30,7 +30,8 @@ const reducer = (state, action) => {
     return { ...state, people: data }
   }
 
-  return state // When there is no ACTION type match we return old state & same UI
+  return state // When there is no action type match we return old state & same UI
+  // We can alternatively throw Error as well | throw new Error(`No matching ${action.type}`)
 }
 
 const ReducerBasics = () => {
