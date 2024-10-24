@@ -1,12 +1,20 @@
-import Item from './Person';
+import Item from './Person'
 
+import { memo } from 'react'
+
+// React.memo(Component) : returns memoized Component and effectively it means it will not monitor the props, only when props changes it will re-render the component
 const List = ({ people }) => {
   return (
     <div>
-      {people.map((person) => {
-        return <Item key={person.id} {...person} />;
+      {people.map(person => {
+        return (
+          <Item
+            key={person.id}
+            {...person}
+          />
+        )
       })}
     </div>
-  );
-};
-export default List;
+  )
+}
+export default memo(List)
