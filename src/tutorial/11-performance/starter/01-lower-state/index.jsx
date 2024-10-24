@@ -12,6 +12,7 @@ const LowerState = () => {
     <section>
       {/* <Button /> */}
 
+      {/* button re-renders the whole LowerState Component, which inturn renders List Component as well, and whatever is within List as well! */}
       <button
         className="btn"
         onClick={() => setCount(count + 1)}
